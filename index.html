@@ -1,1 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simone Di Giorgio — Research Scientist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff;--bg2:#F0F5FA;--ink:#0A1628;--soft:#4A5568;
+  --acc:#0094B3;--acc2:#006E87;--acc-bg:#E0F4F9;--brd:#DDE4ED;
+  --r:8px;--W:1120px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
 
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--brd);padding:0 2rem}
+.nav-i{max-width:var(--W);margin:0 auto;height:58px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'JetBrains Mono',monospace;font-size:.95rem;color:var(--acc);text-decoration:none;letter-spacing:.06em}
+.nav-l{display:flex;gap:2rem;list-style:none}
+.nav-l a{text-decoration:none;color:var(--soft);font-size:.875rem;font-weight:500;transition:color .2s}
+.nav-l a:hover{color:var(--acc)}
+
+/* HERO */
+.hero{max-width:var(--W);margin:0 auto;padding:6rem 2rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--acc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+h1{font-family:'DM Serif Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.08;margin-bottom:.9rem}
+.hero-sub{font-size:1rem;color:var(--soft);margin-bottom:.35rem}
+.hero-aff{font-size:.875rem;color:var(--soft);margin-bottom:1.5rem}
+.hero-bio{font-size:.97rem;color:var(--soft);line-height:1.75;margin-bottom:2rem;max-width:500px}
+.ctas{display:flex;gap:.85rem;flex-wrap:wrap}
+.btn{padding:.58rem 1.35rem;border-radius:var(--r);font-size:.875rem;font-weight:500;text-decoration:none;transition:background .2s,border-color .2s,color .2s}
+.btn-p{background:var(--acc);color:#fff}.btn-p:hover{background:var(--acc2)}
+.btn-o{border:1.5px solid var(--brd);color:var(--soft)}.btn-o:hover{border-color:var(--acc);color:var(--acc)}
+.hero-vis{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:4/3}
+.hero-vis canvas{width:100%;height:100%;display:block}
+.vis-lbl{position:absolute;bottom:10px;left:14px;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.65);background:rgba(0,0,0,.35);padding:3px 9px;border-radius:5px}
+
+/* SECTIONS */
+section{padding:5rem 2rem}
+.s-inner{max-width:var(--W);margin:0 auto}
+.s-hd{margin-bottom:3rem}
+.s-ey{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--acc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.s-ti{font-family:'DM Serif Display',serif;font-size:clamp(1.7rem,3vw,2.3rem)}
+.s-de{margin-top:.7rem;color:var(--soft);max-width:640px;font-size:.96rem}
+
+/* RESEARCH GRID */
+#research{background:var(--bg2)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.card{background:#fff;border-radius:12px;overflow:hidden;border:1px solid var(--brd);transition:box-shadow .25s,transform .25s}
+.card:hover{box-shadow:0 10px 36px rgba(0,148,179,.13);transform:translateY(-4px)}
+.card-med{width:100%;aspect-ratio:16/9;overflow:hidden;position:relative;background:var(--ink);display:block}
+.card-med canvas,.card-med img{width:100%;height:100%;display:block;object-fit:cover}
+.card-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:rgba(255,255,255,.4);letter-spacing:.08em}
+.card-b{padding:1.1rem 1.25rem 1.35rem}
+.card-ti{font-family:'DM Serif Display',serif;font-size:1.05rem;margin-bottom:.45rem}
+.card-de{font-size:.83rem;color:var(--soft);line-height:1.62;margin-bottom:.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.tag{background:var(--acc-bg);color:var(--acc2);font-family:'JetBrains Mono',monospace;font-size:.67rem;padding:2px 8px;border-radius:4px}
+
+/* PUBLICATIONS */
+.pub-list{display:flex;flex-direction:column;gap:1.35rem}
+.pub{display:grid;grid-template-columns:3.2rem 1fr;gap:0 1.1rem;padding-bottom:1.35rem;border-bottom:1px solid var(--brd)}
+.pub:last-child{border-bottom:none}
+.p-yr{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--acc);padding-top:.18rem}
+.p-ti{font-weight:500;font-size:.95rem;color:var(--ink);display:block;text-decoration:none;margin-bottom:.2rem;transition:color .2s}
+.p-ti:hover{color:var(--acc)}
+.p-au{font-size:.82rem;color:var(--soft);margin-bottom:.15rem}
+.p-ve{font-size:.8rem;color:var(--soft);font-style:italic}
+.badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.63rem;background:#FEF3C7;color:#92400E;padding:1px 7px;border-radius:4px;font-style:normal;margin-left:.4rem}
+
+/* ABOUT */
+#about{background:var(--bg2)}
+.about-g{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start}
+.about-g p{color:var(--soft);font-size:.96rem;margin-bottom:1rem;line-height:1.78}
+.alinks{display:flex;flex-direction:column;gap:.8rem}
+.alink{display:flex;align-items:center;gap:.55rem;text-decoration:none;color:var(--soft);font-size:.875rem;transition:color .2s}
+.alink:hover{color:var(--acc)}
+.alink svg{flex-shrink:0;width:16px;height:16px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--soft)}
+
+/* RESPONSIVE */
+@media(max-width:920px){
+  .hero{grid-template-columns:1fr;padding:3rem 1.5rem 2.5rem}
+  .hero-vis{display:none}
+  .grid{grid-template-columns:1fr 1fr}
+  .about-g{grid-template-columns:1fr;gap:2rem}
+}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}
+  nav{padding:0 1rem}
+  .nav-l{gap:1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-i">
+    <a class="logo" href="#">SDG</a>
+    <ul class="nav-l">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="hero">
+  <div>
+    <div class="eyebrow">Research Scientist · CNR-INM Rome</div>
+    <h1>Simone<br>Di Giorgio</h1>
+    <p class="hero-sub">Direct Numerical Simulation of Multiphase Turbulent Flows</p>
+    <p class="hero-aff">Istituto di Ingegneria del Mare — Consiglio Nazionale delle Ricerche</p>
+    <p class="hero-bio">I develop and use high-fidelity CFD solvers to study the turbulent dynamics of air-water interfaces, from ocean gas exchange to naval drag reduction.</p>
+    <div class="ctas">
+      <a class="btn btn-p" href="#research">Research Topics</a>
+      <a class="btn btn-o" href="#publications">Publications</a>
+      <a class="btn btn-o" href="cv.pdf">Download CV</a>
+    </div>
+  </div>
+  <div class="hero-vis">
+    <canvas id="c-hero"></canvas>
+    <div class="vis-lbl">DNS — wave breaking, Re_τ = 300</div>
+  </div>
+</div>
+
+<section id="research">
+  <div class="s-inner">
+    <div class="s-hd">
+      <div class="s-ey">Topics</div>
+      <h2 class="s-ti">Research</h2>
+      <p class="s-de">I study multiphase turbulent flows using Direct Numerical Simulation, combining high-order numerical methods with large-scale HPC resources on Leonardo and ARCHER2.</p>
+    </div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-med"><canvas id="c-wave"></canvas></div>
+        <div class="card-b">
+          <h3 class="card-ti">Wave Breaking</h3>
+          <p class="card-de">DNS of breaking surface waves: turbulence generation, air entrainment, void fraction, and energy dissipation across spilling and plunging regimes.</p>
+          <div class="tags"><span class="tag">DNS</span><span class="tag">VOF</span><span class="tag">JFM 2022 cover</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-med"><canvas id="c-gas"></canvas></div>
+        <div class="card-b">
+          <h3 class="card-ti">Air-Sea Gas Exchange</h3>
+          <p class="card-de">Turbulence-driven transfer of CO₂ and O₂ across a deformable air-water interface. Quantifying wave, bubble, and Schmidt-number contributions.</p>
+          <div class="tags"><span class="tag">OCEANBREATHE</span><span class="tag">GRL 2025</span><span class="tag">Haroun model</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-med"><canvas id="c-bub"></canvas></div>
+        <div class="card-b">
+          <h3 class="card-ti">Bubble Dynamics & Air Lubrication</h3>
+          <p class="card-de">DNS of bubble-laden turbulent channel flow for naval drag reduction. Resolving bubble-turbulence interaction across a Re–Fr–We parameter space.</p>
+          <div class="tags"><span class="tag">AIR-DRAG</span><span class="tag">Allen-Cahn</span><span class="tag">EuroHPC</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <!-- Replace with: <img src="gifs/drops.gif" alt="drop-laden turbulence"> -->
+        <div class="card-med" style="background:linear-gradient(135deg,#0D1B2A 0%,#1E3A5F 55%,#0094B3 100%)">
+          <div class="card-ph">drops.gif</div>
+        </div>
+        <div class="card-b">
+          <h3 class="card-ti">Drop-Laden Turbulent Flows</h3>
+          <p class="card-de">Mass transfer in turbulent channel flow laden with deformable droplets. Coupling between interfacial dynamics and scalar transport across phase boundaries.</p>
+          <div class="tags"><span class="tag">JFM 2025</span><span class="tag">Droplets</span><span class="tag">Scalar transport</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-med" style="background:linear-gradient(135deg,#0A1A2E 0%,#0D3050 55%,#006E87 100%)">
+          <div class="card-ph">particles.gif</div>
+        </div>
+        <div class="card-b">
+          <h3 class="card-ti">Particles at Deformable Interfaces</h3>
+          <p class="card-de">Dynamics of solid particles at air-water interfaces: trapping, detachment, and Marangoni-driven migration. Joint DNS study with Wuhan University.</p>
+          <div class="tags"><span class="tag">VOS</span><span class="tag">Brinkman</span><span class="tag">Collaboration</span></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-med" style="background:linear-gradient(135deg,#0A1628 0%,#0F2A4A 60%,#0A7090 100%)">
+          <div class="card-ph">solver.gif</div>
+        </div>
+        <div class="card-b">
+          <h3 class="card-ti">CFD Solver Development</h3>
+          <p class="card-de">SALACIA (structured, Fortran/MPI) and URSULA (unstructured, GPU-native): two in-house solvers for petascale multiphase flow simulation.</p>
+          <div class="tags"><span class="tag">Fortran</span><span class="tag">OpenACC</span><span class="tag">GPU</span><span class="tag">Leonardo</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="s-inner">
+    <div class="s-hd">
+      <div class="s-ey">Selected Works</div>
+      <h2 class="s-ti">Publications</h2>
+    </div>
+    <div class="pub-list">
+
+      <div class="pub">
+        <div class="p-yr">2025</div>
+        <div>
+          <a class="p-ti" href="#">Mass transfer in drop-laden turbulent channel flow</a>
+          <p class="p-au">Di Giorgio S., Zonta F., Pirozzoli S., Iafrati A., Soldati A.</p>
+          <p class="p-ve">Journal of Fluid Mechanics</p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="p-yr">2025</div>
+        <div>
+          <a class="p-ti" href="#">Air-sea gas exchange in turbulent breaking waves</a>
+          <p class="p-au">Di Giorgio S., Iafrati A., Pirozzoli S.</p>
+          <p class="p-ve">Geophysical Research Letters</p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="p-yr">2022</div>
+        <div>
+          <a class="p-ti" href="#">DNS of breaking waves: turbulence, void fraction and surface deformation</a>
+          <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
+          <p class="p-ve">Journal of Fluid Mechanics <span class="badge">Cover Article</span></p>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="p-yr">2022</div>
+        <div>
+          <a class="p-ti" href="#">On the consistence of the UWCDI phase-field method for multiphase flows</a>
+          <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
+          <p class="p-ve">Computers &amp; Fluids</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="s-inner">
+    <div class="s-hd">
+      <div class="s-ey">Background</div>
+      <h2 class="s-ti">About</h2>
+    </div>
+    <div class="about-g">
+      <div>
+        <p>I am a Research Scientist at the <strong>Istituto di Ingegneria del Mare (CNR-INM)</strong> in Rome, where I work on Direct Numerical Simulation of turbulent multiphase flows. My research sits at the intersection of fundamental fluid dynamics and engineering applications.</p>
+        <p>I completed my PhD in 2021 at <strong>Sapienza University of Rome</strong> under the supervision of Sergio Pirozzoli and Alessandro Iafrati. I have since been PI of multiple large-scale HPC allocations (>22M CPU-hours) on EuroHPC infrastructure.</p>
+        <p>I develop two in-house CFD codes: <strong>SALACIA</strong>, a structured Cartesian solver in Fortran/MPI, and <strong>URSULA</strong>, an unstructured GPU-native solver, both designed for petascale multiphase flow simulation.</p>
+      </div>
+      <div class="alinks">
+        <a class="alink" href="mailto:simone.digiorgio@cnr.it">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+          simone.digiorgio@cnr.it
+        </a>
+        <a class="alink" href="https://github.com/simone-digiorgio" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+        <a class="alink" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24A12 12 0 0 0 12 0zM7.5 6.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0zm1 3.5h1.5V18h-1.5V10zm3.5 0h4a4 4 0 0 1 0 8h-4V10zm1.5 1.5v5h2.5a2.5 2.5 0 0 0 0-5H13.5z"/></svg>
+          ORCID
+        </a>
+        <a class="alink" href="https://scholar.google.com" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
+          Google Scholar
+        </a>
+        <a class="alink" href="https://www.inm.cnr.it" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          CNR-INM
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2025 Simone Di Giorgio &nbsp;·&nbsp; Built with HTML &nbsp;·&nbsp; Hosted on GitHub Pages</footer>
+
+<script>
+// Utility: resize canvas to its CSS display size
+function fit(c){const p=c.parentElement,r=p.getBoundingClientRect();c.width=r.width||c.offsetWidth;c.height=r.height||c.offsetHeight}
+
+// ── HERO: animated DNS-like velocity field ──────────────────────────
+;(function(){
+  const c=document.getElementById('c-hero');if(!c)return;
+  const ctx=c.getContext('2d');let t=0;
+  function resize(){fit(c)}
+  resize();window.addEventListener('resize',resize);
+  function draw(){
+    const W=c.width,H=c.height;
+    ctx.fillStyle='#0A1628';ctx.fillRect(0,0,W,H);
+    const cols=42,rows=32,dx=W/cols,dy=H/rows;
+    for(let i=0;i<=cols;i++)for(let j=0;j<=rows;j++){
+      const x=i*dx,y=j*dy;
+      const u=Math.sin(2*Math.PI*i/cols+.5*Math.sin(j/rows*Math.PI+t*.4)+t*.3)+.4*Math.sin(4*Math.PI*j/rows+t*.6);
+      const v=Math.cos(2*Math.PI*j/rows+.5*Math.cos(i/cols*Math.PI+t*.5)+t*.2)+.4*Math.cos(4*Math.PI*i/cols+t*.4);
+      const m=Math.min(Math.sqrt(u*u+v*v)/2,1);
+      const len=7+m*11,a=Math.atan2(v,u);
+      ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+Math.cos(a)*len,y+Math.sin(a)*len);
+      ctx.strokeStyle=`rgba(${Math.round(10+m*0)},${Math.round(26+m*148)},${Math.round(40+m*178)},${.45+m*.55})`;
+      ctx.lineWidth=1.2;ctx.stroke();
+      ctx.beginPath();ctx.arc(x,y,1,0,Math.PI*2);
+      ctx.fillStyle=`rgba(0,${Math.round(100+m*155)},${Math.round(160+m*70)},.65)`;ctx.fill();
+    }
+    t+=.014;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── WAVE BREAKING card ──────────────────────────────────────────────
+;(function(){
+  const c=document.getElementById('c-wave');if(!c)return;
+  const ctx=c.getContext('2d');let t=0;
+  fit(c);
+  function draw(){
+    const W=c.width,H=c.height;
+    ctx.fillStyle='#0A1628';ctx.fillRect(0,0,W,H);
+    // Water body
+    ctx.beginPath();
+    const b=H*.5;ctx.moveTo(0,b);
+    for(let x=0;x<=W;x+=2){
+      const y=b+16*Math.sin(2*Math.PI*x/(W*.6)-t*2)+7*Math.sin(2*Math.PI*x/(W*.22)-t*3.8)+3*Math.sin(2*Math.PI*x/(W*.1)-t*6);
+      ctx.lineTo(x,y);
+    }
+    ctx.lineTo(W,H);ctx.lineTo(0,H);ctx.closePath();
+    ctx.fillStyle='rgba(0,90,155,.85)';ctx.fill();
+    // Surface foam line
+    ctx.beginPath();ctx.moveTo(0,b);
+    for(let x=0;x<=W;x+=2){
+      const y=b+16*Math.sin(2*Math.PI*x/(W*.6)-t*2)+7*Math.sin(2*Math.PI*x/(W*.22)-t*3.8)+3*Math.sin(2*Math.PI*x/(W*.1)-t*6);
+      ctx.lineTo(x,y);
+    }
+    ctx.strokeStyle='rgba(160,220,255,.7)';ctx.lineWidth=2;ctx.stroke();
+    // Bubbles
+    for(let i=0;i<10;i++){
+      const bx=((i*137.5+t*28)%W);
+      const by=H*.55+Math.sin(t*1.3+i*1.1)*8+i*6.5;
+      const br=1.5+Math.sin(t*2+i)*.8;
+      ctx.beginPath();ctx.arc(bx,by,br,0,Math.PI*2);
+      ctx.strokeStyle='rgba(100,200,255,.5)';ctx.lineWidth=1;ctx.stroke();
+    }
+    t+=.018;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── GAS EXCHANGE card ───────────────────────────────────────────────
+;(function(){
+  const c=document.getElementById('c-gas');if(!c)return;
+  const ctx=c.getContext('2d');let t=0;
+  fit(c);
+  const pts=Array.from({length:22},()=>({x:Math.random(),y:.62+Math.random()*.33,s:.4+Math.random()*.7}));
+  function draw(){
+    const W=c.width,H=c.height;
+    ctx.fillStyle='#051C2C';ctx.fillRect(0,0,W,H);
+    // Concentration gradient
+    const gd=ctx.createLinearGradient(0,H*.38,0,H);
+    gd.addColorStop(0,'rgba(0,180,160,.12)');gd.addColorStop(1,'rgba(0,100,120,.04)');
+    ctx.fillStyle=gd;ctx.fillRect(0,H*.38,W,H*.62);
+    // Interface band
+    ctx.beginPath();ctx.moveTo(0,H*.46);
+    for(let x=0;x<=W;x+=2)ctx.lineTo(x,H*.46+5*Math.sin(x/W*Math.PI*3.5-t*1.6)+2.5*Math.cos(x/W*Math.PI*8-t*2.8));
+    for(let x=W;x>=0;x-=2)ctx.lineTo(x,H*.52+4.5*Math.sin(x/W*Math.PI*3.5-t*1.6)+2*Math.cos(x/W*Math.PI*8-t*2.8));
+    ctx.closePath();ctx.fillStyle='rgba(0,200,170,.18)';ctx.fill();
+    ctx.strokeStyle='rgba(0,210,180,.85)';ctx.lineWidth=1.5;ctx.stroke();
+    // Rising CO2 dots
+    pts.forEach(p=>{
+      p.y-=.0025*p.s;if(p.y<.4){p.y=.66+Math.random()*.28;p.x=Math.random();}
+      ctx.beginPath();ctx.arc(p.x*W,p.y*H,2.2*p.s,0,Math.PI*2);
+      ctx.fillStyle=`rgba(0,210,170,${.28+p.s*.38})`;ctx.fill();
+    });
+    t+=.016;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// ── BUBBLES / AIR LUBRICATION card ─────────────────────────────────
+;(function(){
+  const c=document.getElementById('c-bub');if(!c)return;
+  const ctx=c.getContext('2d');let t=0;
+  fit(c);
+  const bubs=Array.from({length:20},()=>({x:Math.random(),y:.55+Math.random()*.42,r:2.5+Math.random()*6,vx:(Math.random()-.5)*.0018,vy:-.003-.004*Math.random()}));
+  function draw(){
+    const W=c.width,H=c.height;
+    ctx.fillStyle='#0A1628';ctx.fillRect(0,0,W,H);
+    // Streamwise streaks (turbulence texture)
+    for(let i=0;i<12;i++){
+      const y=((i/12*H+t*18*(i%2?1:-1))%H);
+      ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y+4*Math.sin(t*1.2+i));
+      ctx.strokeStyle=`rgba(58,123,213,${.04+(i%3)*.025})`;ctx.lineWidth=1;ctx.stroke();
+    }
+    // Wall line
+    ctx.fillStyle='rgba(0,148,179,.18)';ctx.fillRect(0,H*.49,W,1.5);
+    // Bubbles
+    bubs.forEach(b=>{
+      b.x+=b.vx;b.y+=b.vy;
+      if(b.x<0)b.x=1;if(b.x>1)b.x=0;
+      if(b.y<.08){b.y=.58+Math.random()*.38;b.x=Math.random();}
+      ctx.beginPath();ctx.arc(b.x*W,b.y*H,b.r,0,Math.PI*2);
+      ctx.strokeStyle='rgba(0,210,240,.72)';ctx.lineWidth=1.3;ctx.stroke();
+      ctx.fillStyle='rgba(0,210,240,.07)';ctx.fill();
+    });
+    t+=.016;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>
