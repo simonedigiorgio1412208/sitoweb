@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simone Di Giorgio — Research Scientist</title>
+<meta name="description" content="Simone Di Giorgio, Research Scientist at CNR-INM Rome. Direct Numerical Simulation of multiphase turbulent flows: wave breaking, air-sea gas exchange, bubble dynamics, drag reduction.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -72,6 +73,17 @@ section{padding:5rem 2rem}
 .p-ve{font-size:.8rem;color:var(--soft);font-style:italic}
 .badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.63rem;background:#FEF3C7;color:#92400E;padding:1px 7px;border-radius:4px;font-style:normal;margin-left:.4rem}
 
+/* HIGHLIGHTS */
+#highlights{padding:3.5rem 2rem 0}
+.hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.hl{display:block;text-decoration:none;color:inherit;border:1px solid var(--brd);border-radius:12px;padding:1.2rem 1.35rem;transition:border-color .2s,box-shadow .2s}
+a.hl:hover{border-color:var(--acc);box-shadow:0 8px 28px rgba(0,148,179,.12)}
+.hl-k{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--acc);letter-spacing:.1em;margin-bottom:.35rem}
+.hl-t{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:.3rem}
+.hl-d{font-size:.82rem;color:var(--soft);line-height:1.55}
+.pub-tog{align-self:flex-start;cursor:pointer;background:none;font-family:inherit;margin-top:.5rem}
+.s-de a{color:var(--acc);text-decoration:none}.s-de a:hover{text-decoration:underline}
+
 /* ABOUT */
 #about{background:var(--bg2)}
 .about-g{display:grid;grid-template-columns:2fr 1fr;gap:4rem;align-items:start}
@@ -90,6 +102,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
   .hero-vis{display:none}
   .grid{grid-template-columns:1fr 1fr}
   .about-g{grid-template-columns:1fr;gap:2rem}
+  .hl-grid{grid-template-columns:1fr}
 }
 @media(max-width:600px){
   .grid{grid-template-columns:1fr}
@@ -191,11 +204,11 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
 
       <div class="card">
         <div class="card-med" style="background:linear-gradient(135deg,#0A1628 0%,#0F2A4A 60%,#0A7090 100%)">
-          <div class="card-ph">solver.gif</div>
+          <div class="card-ph">mins.gif</div>
         </div>
         <div class="card-b">
           <h3 class="card-ti">CFD Solver Development</h3>
-          <p class="card-de">SALACIA (structured, Fortran/MPI) and URSULA (unstructured, GPU-native): two in-house solvers for petascale multiphase flow simulation.</p>
+          <p class="card-de">MINS: an in-house structured Cartesian solver (Fortran, MPI, GPU-accelerated) for DNS of high-density-ratio gas-liquid flows, with VOF and phase-field interface tracking.</p>
           <div class="tags"><span class="tag">Fortran</span><span class="tag">OpenACC</span><span class="tag">GPU</span><span class="tag">Leonardo</span></div>
         </div>
       </div>
@@ -204,49 +217,145 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
   </div>
 </section>
 
+<section id="highlights">
+  <div class="s-inner">
+    <div class="hl-grid">
+      <a class="hl" href="https://doi.org/10.1103/APS.DFD.2024.GFM.V2694489" target="_blank" rel="noopener">
+        <div class="hl-k">2024</div>
+        <div class="hl-t">Milton van Dyke Award</div>
+        <div class="hl-d">APS-DFD Gallery of Fluid Motion, 77th Annual Meeting — bubble-mediated gas exchange in turbulent multiphase flow</div>
+      </a>
+      <a class="hl" href="https://scholar.google.com/scholar?q=On+coherent+vortical+structures+in+wave+breaking" target="_blank" rel="noopener">
+        <div class="hl-k">2022</div>
+        <div class="hl-t">JFM Cover Article</div>
+        <div class="hl-d">Journal of Fluid Mechanics vol. 947 — coherent vortical structures in wave breaking</div>
+      </a>
+      <div class="hl">
+        <div class="hl-k">~22.5M CPU-h</div>
+        <div class="hl-t">HPC allocations</div>
+        <div class="hl-d">PI / Co-PI of EuroHPC Regular Access and CINECA ISCRA grants on Leonardo and EuroHPC systems</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="publications">
   <div class="s-inner">
     <div class="s-hd">
-      <div class="s-ey">Selected Works</div>
+      <div class="s-ey">Peer-reviewed</div>
       <h2 class="s-ti">Publications</h2>
+      <p class="s-de">Selected journal articles. Full list on <a href="https://orcid.org/0000-0002-9331-8899" target="_blank" rel="noopener">ORCID</a> and in the <a href="cv.pdf">CV</a>.</p>
     </div>
     <div class="pub-list">
 
       <div class="pub">
+        <div class="p-yr">2026</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Beyond+the+Reynolds+analogy%3A+bubble-induced+modulation+of+turbulent+heat+transfer" target="_blank" rel="noopener">Beyond the Reynolds analogy: bubble-induced modulation of turbulent heat transfer</a>
+          <p class="p-au">Procacci D., Di Giorgio S., Soldati A., Solsvik J.</p>
+          <p class="p-ve">Journal of Fluid Mechanics, 1035, A12</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="p-yr">2026</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Turbulence+anisotropy+modulation+in+bubble-laden+channel+flow%3A+a+numerical+study" target="_blank" rel="noopener">Turbulence anisotropy modulation in bubble-laden channel flow: a numerical study</a>
+          <p class="p-au">Procacci D., Arosemena A.A., Di Giorgio S., Solsvik J.</p>
+          <p class="p-ve">International Journal of Multiphase Flow, 195, 105505</p>
+        </div>
+      </div>
+      <div class="pub">
         <div class="p-yr">2025</div>
         <div>
-          <a class="p-ti" href="#">Mass transfer in drop-laden turbulent channel flow</a>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Mass+transfer+in+drop-laden+turbulent+flow" target="_blank" rel="noopener">Mass transfer in drop-laden turbulent flow</a>
           <p class="p-au">Di Giorgio S., Zonta F., Pirozzoli S., Iafrati A., Soldati A.</p>
-          <p class="p-ve">Journal of Fluid Mechanics</p>
+          <p class="p-ve">Journal of Fluid Mechanics, 1036, A30</p>
         </div>
       </div>
-
       <div class="pub">
         <div class="p-yr">2025</div>
         <div>
-          <a class="p-ti" href="#">Air-sea gas exchange in turbulent breaking waves</a>
-          <p class="p-au">Di Giorgio S., Iafrati A., Pirozzoli S.</p>
-          <p class="p-ve">Geophysical Research Letters</p>
+          <a class="p-ti" href="https://doi.org/10.1029/2025GL114907" target="_blank" rel="noopener">Air entrainment and gas transfer in wave breaking events</a>
+          <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
+          <p class="p-ve">Geophysical Research Letters, 52(15), e2025GL114907</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="p-yr">2025</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Interface-mediated+gas+exchange+in+turbulent+multiphase+flow" target="_blank" rel="noopener">Interface-mediated gas exchange in turbulent multiphase flow</a>
+          <p class="p-au">Di Giorgio S., Zonta F., Pirozzoli S., Iafrati A., Soldati A.</p>
+          <p class="p-ve">Physical Review Fluids, 10(11), 110506</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="p-yr">2025</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Efficient+implementation+of+the+Allen%E2%80%93Cahn+phase-field+method+for+material+interface+tracking" target="_blank" rel="noopener">Efficient implementation of the Allen–Cahn phase-field method for material interface tracking</a>
+          <p class="p-au">Pirozzoli S., Di Giorgio S., Rossi D.</p>
+          <p class="p-ve">Computers &amp; Fluids, 106768</p>
         </div>
       </div>
 
+      <div id="pub-more" hidden>
+      <div class="pub">
+        <div class="p-yr">2025</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Comparative+analysis+of+volume+of+fluid+and+phase-field+methods+for+numerical+simulations+of+two-phase+flows" target="_blank" rel="noopener">Comparative analysis of volume of fluid and phase-field methods for numerical simulations of two-phase flows</a>
+          <p class="p-au">Rossi D., Di Giorgio S., Pirozzoli S.</p>
+          <p class="p-ve">International Journal of Multiphase Flow, 189</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="p-yr">2024</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Evaluation+of+advection+schemes+and+surface+tension+model+for+algebraic+and+geometric+VOF+multiphase+flow+solvers" target="_blank" rel="noopener">Evaluation of advection schemes and surface tension model for algebraic and geometric VOF multiphase flow solvers</a>
+          <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
+          <p class="p-ve">Journal of Computational Physics, 499, 112717</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="p-yr">2023</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=Navier%E2%80%93Stokes+simulations+of+vertical+sloshing+with+time-periodic+excitation" target="_blank" rel="noopener">Navier–Stokes simulations of vertical sloshing with time-periodic excitation</a>
+          <p class="p-au">Rossi D., Ubaldini D., Di Giorgio S., Pirozzoli S.</p>
+          <p class="p-ve">International Journal of Multiphase Flow, 167, 104505</p>
+        </div>
+      </div>
       <div class="pub">
         <div class="p-yr">2022</div>
         <div>
-          <a class="p-ti" href="#">DNS of breaking waves: turbulence, void fraction and surface deformation</a>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=On+coherent+vortical+structures+in+wave+breaking" target="_blank" rel="noopener">On coherent vortical structures in wave breaking</a>
           <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
-          <p class="p-ve">Journal of Fluid Mechanics <span class="badge">Cover Article</span></p>
+          <p class="p-ve">Journal of Fluid Mechanics, 947, A44 <span class="badge">Cover Article</span></p>
         </div>
       </div>
-
       <div class="pub">
-        <div class="p-yr">2022</div>
+        <div class="p-yr">2020</div>
         <div>
-          <a class="p-ti" href="#">On the consistence of the UWCDI phase-field method for multiphase flows</a>
-          <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
-          <p class="p-ve">Computers &amp; Fluids</p>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=On+the+relationship+between+drag+and+vertical+velocity+fluctuations+in+flow+over+riblets+and+liquid+infused+surfaces" target="_blank" rel="noopener">On the relationship between drag and vertical velocity fluctuations in flow over riblets and liquid infused surfaces</a>
+          <p class="p-au">Di Giorgio S., Pirozzoli S., Leonardi S., Orlandi P.</p>
+          <p class="p-ve">International Journal of Heat and Fluid Flow, 86, 108663</p>
         </div>
       </div>
+      <div class="pub">
+        <div class="p-yr">2019</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=On+algebraic+TVD-VOF+methods+for+tracking+material+interfaces" target="_blank" rel="noopener">On algebraic TVD-VOF methods for tracking material interfaces</a>
+          <p class="p-au">Pirozzoli S., Di Giorgio S., Iafrati A.</p>
+          <p class="p-ve">Computers &amp; Fluids, 189, 73–81</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="p-yr">2019</div>
+        <div>
+          <a class="p-ti" href="https://scholar.google.com/scholar?q=An+aerothermodynamic+design+optimization+framework+for+hypersonic+vehicles" target="_blank" rel="noopener">An aerothermodynamic design optimization framework for hypersonic vehicles</a>
+          <p class="p-au">Di Giorgio S., Quagliarella D., Pezzella G., Pirozzoli S.</p>
+          <p class="p-ve">Aerospace Science and Technology, 84, 339–347</p>
+        </div>
+      </div>
+      </div>
+      <button class="btn btn-o pub-tog" id="pub-tog" type="button">Show all 13 articles</button>
 
     </div>
   </div>
@@ -260,26 +369,30 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
     </div>
     <div class="about-g">
       <div>
-        <p>I am a Research Scientist at the <strong>Istituto di Ingegneria del Mare (CNR-INM)</strong> in Rome, where I work on Direct Numerical Simulation of turbulent multiphase flows. My research sits at the intersection of fundamental fluid dynamics and engineering applications.</p>
-        <p>I completed my PhD in 2021 at <strong>Sapienza University of Rome</strong> under the supervision of Sergio Pirozzoli and Alessandro Iafrati. I have since been PI of multiple large-scale HPC allocations (>22M CPU-hours) on EuroHPC infrastructure.</p>
-        <p>I develop two in-house CFD codes: <strong>SALACIA</strong>, a structured Cartesian solver in Fortran/MPI, and <strong>URSULA</strong>, an unstructured GPU-native solver, both designed for petascale multiphase flow simulation.</p>
+        <p>I am a Research Scientist at the <strong>Istituto di Ingegneria del Mare (CNR-INM)</strong> in Rome, where I run an independent research program on computational multiphase fluid mechanics with environmental and naval applications: ocean wave breaking, air-sea gas exchange, bubble dynamics and air lubrication for ship drag reduction.</p>
+        <p>I completed my PhD in Aeronautics and Space Engineering in 2021 at <strong>Sapienza University of Rome</strong>, advised by Sergio Pirozzoli and Alessandro Iafrati, developing a gas-liquid DNS solver for atomization. In 2023–2024 I was a Visiting Researcher at <strong>TU Wien</strong> with Alfredo Soldati's group, working on gas species transfer across deformable interfaces; I keep active collaborations with TU Wien, Newcastle University and NTNU.</p>
+        <p>I am Principal Investigator of EuroHPC and ISCRA computing grants totalling ~15.8 million CPU-hours and 869k node-hours (~22.5 million CPU-hours including Co-PI awards), and I contribute to the Horizon Europe <strong>RETROFIT-55</strong> project. I develop <strong>MINS</strong>, an in-house structured Cartesian solver (Fortran/MPI, GPU-accelerated) for DNS of high-density-ratio gas-liquid flows, and co-advise PhD and MSc students at Sapienza, NTNU and TU Wien.</p>
       </div>
       <div class="alinks">
         <a class="alink" href="mailto:simone.digiorgio@cnr.it">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
           simone.digiorgio@cnr.it
         </a>
-        <a class="alink" href="https://github.com/simone-digiorgio" target="_blank" rel="noopener">
+        <a class="alink" href="https://github.com/simonedigiorgio1412208" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
-        <a class="alink" href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener">
+        <a class="alink" href="https://orcid.org/0000-0002-9331-8899" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24A12 12 0 0 0 12 0zM7.5 6.5a1.25 1.25 0 1 1 2.5 0 1.25 1.25 0 0 1-2.5 0zm1 3.5h1.5V18h-1.5V10zm3.5 0h4a4 4 0 0 1 0 8h-4V10zm1.5 1.5v5h2.5a2.5 2.5 0 0 0 0-5H13.5z"/></svg>
           ORCID
         </a>
-        <a class="alink" href="https://scholar.google.com" target="_blank" rel="noopener">
+        <a class="alink" href="https://scholar.google.com/citations?user=xB6Q1r8AAAAJ" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 10a8 8 0 0 1 7.162 3.44L24 9.5z"/></svg>
           Google Scholar
+        </a>
+        <a class="alink" href="https://www.linkedin.com/in/sdg301091/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
         </a>
         <a class="alink" href="https://www.inm.cnr.it" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
@@ -290,11 +403,19 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
   </div>
 </section>
 
-<footer>© 2025 Simone Di Giorgio &nbsp;·&nbsp; Built with HTML &nbsp;·&nbsp; Hosted on GitHub Pages</footer>
+<footer>© 2026 Simone Di Giorgio &nbsp;·&nbsp; Built with HTML &nbsp;·&nbsp; Hosted on GitHub Pages</footer>
 
 <script>
 // Utility: resize canvas to its CSS display size
 function fit(c){const p=c.parentElement,r=p.getBoundingClientRect();c.width=r.width||c.offsetWidth;c.height=r.height||c.offsetHeight}
+window.addEventListener('resize',()=>document.querySelectorAll('.card-med canvas').forEach(fit));
+
+// Publications: show/hide full list
+;(function(){
+  const b=document.getElementById('pub-tog'),m=document.getElementById('pub-more');if(!b||!m)return;
+  b.addEventListener('click',()=>{m.hidden=!m.hidden;b.textContent=m.hidden?b.dataset.more:'Show selected only'});
+  b.dataset.more=b.textContent;
+})();
 
 // ── HERO: animated DNS-like velocity field ──────────────────────────
 ;(function(){
