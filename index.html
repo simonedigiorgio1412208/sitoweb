@@ -59,6 +59,7 @@ section{padding:5rem 2rem}
 .card-ti{font-family:'DM Serif Display',serif;font-size:1.05rem;margin-bottom:.45rem}
 .card-de{font-size:.83rem;color:var(--soft);line-height:1.62;margin-bottom:.8rem}
 .tags{display:flex;flex-wrap:wrap;gap:.35rem}
+.grid-note{margin-top:2rem;font-size:.85rem;color:var(--soft);max-width:760px;line-height:1.6;border-left:2px solid var(--acc);padding-left:1rem}
 .tag{background:var(--acc-bg);color:var(--acc2);font-family:'JetBrains Mono',monospace;font-size:.67rem;padding:2px 8px;border-radius:4px}
 
 /* PUBLICATIONS */
@@ -209,15 +210,16 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       </div>
 
       <div class="card">
-        <div class="card-med"><video src="media/mins.mp4" poster="media/mins.jpg" autoplay muted loop playsinline preload="metadata" aria-label="bubble swarm in a vertical turbulent channel"></video></div>
+        <div class="card-med"><video src="media/vchannel.mp4" poster="media/vchannel.jpg" autoplay muted loop playsinline preload="metadata" aria-label="bubble swarm in a vertical turbulent channel"></video></div>
         <div class="card-b">
-          <h3 class="card-ti">CFD Solver Development</h3>
-          <p class="card-de">MINS: an in-house structured Cartesian solver (Fortran, MPI, GPU-accelerated) for DNS of high-density-ratio gas-liquid flows, with VOF and phase-field interface tracking.</p>
-          <div class="tags"><span class="tag">Fortran</span><span class="tag">OpenACC</span><span class="tag">GPU</span><span class="tag">Leonardo</span></div>
+          <h3 class="card-ti">Bubble-Laden Vertical Channel Flow</h3>
+          <p class="card-de">DNS of dense bubble swarms rising in turbulent vertical channels: bubble-induced modulation of turbulence anisotropy and of heat and mass transfer beyond the Reynolds analogy. In collaboration with the groups at NTNU (Jannike Solsvik) and KTH.</p>
+          <div class="tags"><span class="tag">JFM 2026</span><span class="tag">IJMF 2026</span><span class="tag">NTNU</span><span class="tag">KTH</span></div>
         </div>
       </div>
 
     </div>
+    <p class="grid-note">All simulations are performed with <strong>MINS</strong>, an in-house structured Cartesian solver (Fortran, MPI, GPU-accelerated) for DNS of high-density-ratio gas-liquid flows with VOF and phase-field interface tracking, run on EuroHPC and CINECA systems.</p>
   </div>
 </section>
 
