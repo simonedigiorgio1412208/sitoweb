@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://simonedigiorgio1412208.github.io/sitoweb/sitemap.xml
