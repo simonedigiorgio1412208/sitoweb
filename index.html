@@ -86,6 +86,8 @@ a.tag{text-decoration:none}a.tag:hover{background:var(--acc);color:#fff}
 .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .hl{display:block;text-decoration:none;color:inherit;border:1px solid var(--brd);border-radius:12px;padding:1.2rem 1.35rem;transition:border-color .2s,box-shadow .2s}
 a.hl:hover{border-color:var(--acc);box-shadow:0 8px 28px rgba(0,148,179,.12)}
+.hl-row{display:flex;gap:1rem;align-items:flex-start}
+.hl-img{width:76px;flex-shrink:0;border-radius:4px;box-shadow:0 2px 10px rgba(10,22,40,.25)}
 .hl-k{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--acc);letter-spacing:.1em;margin-bottom:.35rem}
 .hl-t{font-family:'DM Serif Display',serif;font-size:1.15rem;margin-bottom:.3rem}
 .hl-d{font-size:.82rem;color:var(--soft);line-height:1.55}
@@ -210,7 +212,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       </div>
 
       <div class="card">
-        <div class="card-med"><video src="media/mins.mp4" poster="media/mins.jpg" autoplay muted loop playsinline preload="metadata" aria-label="gas-saturated bubbles in turbulent flow"></video></div>
+        <div class="card-med"><video src="media/mins.mp4" poster="media/mins.jpg" autoplay muted loop playsinline preload="metadata" aria-label="bubble swarm in a vertical turbulent channel"></video></div>
         <div class="card-b">
           <h3 class="card-ti">CFD Solver Development</h3>
           <p class="card-de">MINS: an in-house structured Cartesian solver (Fortran, MPI, GPU-accelerated) for DNS of high-density-ratio gas-liquid flows, with VOF and phase-field interface tracking.</p>
@@ -265,10 +267,13 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
         <div class="hl-t">Milton van Dyke Award</div>
         <div class="hl-d">APS-DFD Gallery of Fluid Motion, 77th Annual Meeting — bubble-mediated gas exchange in turbulent multiphase flow</div>
       </a>
-      <a class="hl" href="https://scholar.google.com/scholar?q=On+coherent+vortical+structures+in+wave+breaking" target="_blank" rel="noopener">
-        <div class="hl-k">2022</div>
-        <div class="hl-t">JFM Cover Article</div>
-        <div class="hl-d">Journal of Fluid Mechanics vol. 947 — coherent vortical structures in wave breaking</div>
+      <a class="hl hl-row" href="https://doi.org/10.1017/jfm.2022.674" target="_blank" rel="noopener">
+        <img class="hl-img" src="media/jfm947_cover.jpg" alt="Journal of Fluid Mechanics volume 947 cover" loading="lazy">
+        <div>
+          <div class="hl-k">2022</div>
+          <div class="hl-t">JFM Cover Article</div>
+          <div class="hl-d">Journal of Fluid Mechanics vol. 947 — coherent vortical structures in wave breaking</div>
+        </div>
       </a>
       <div class="hl">
         <div class="hl-k">~22.5M CPU-h</div>
@@ -291,7 +296,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2026</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Beyond+the+Reynolds+analogy%3A+bubble-induced+modulation+of+turbulent+heat+transfer" target="_blank" rel="noopener">Beyond the Reynolds analogy: bubble-induced modulation of turbulent heat transfer</a>
+          <a class="p-ti" href="https://doi.org/10.1017/jfm.2026.11546" target="_blank" rel="noopener">Beyond the Reynolds analogy: bubble-induced modulation of turbulent heat transfer</a>
           <p class="p-au">Procacci D., Di Giorgio S., Soldati A., Solsvik J.</p>
           <p class="p-ve">Journal of Fluid Mechanics, 1035, A12</p>
         </div>
@@ -299,7 +304,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2026</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Turbulence+anisotropy+modulation+in+bubble-laden+channel+flow%3A+a+numerical+study" target="_blank" rel="noopener">Turbulence anisotropy modulation in bubble-laden channel flow: a numerical study</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.ijmultiphaseflow.2025.105505" target="_blank" rel="noopener">Turbulence anisotropy modulation in bubble-laden channel flow: a numerical study</a>
           <p class="p-au">Procacci D., Arosemena A.A., Di Giorgio S., Solsvik J.</p>
           <p class="p-ve">International Journal of Multiphase Flow, 195, 105505</p>
         </div>
@@ -307,7 +312,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2025</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Mass+transfer+in+drop-laden+turbulent+flow" target="_blank" rel="noopener">Mass transfer in drop-laden turbulent flow</a>
+          <a class="p-ti" href="https://doi.org/10.1017/jfm.2026.11604" target="_blank" rel="noopener">Mass transfer in drop-laden turbulent flow</a>
           <p class="p-au">Di Giorgio S., Zonta F., Pirozzoli S., Iafrati A., Soldati A.</p>
           <p class="p-ve">Journal of Fluid Mechanics, 1036, A30</p>
         </div>
@@ -323,7 +328,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2025</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Interface-mediated+gas+exchange+in+turbulent+multiphase+flow" target="_blank" rel="noopener">Interface-mediated gas exchange in turbulent multiphase flow</a>
+          <a class="p-ti" href="https://doi.org/10.1103/9b58-6llx" target="_blank" rel="noopener">Interface-mediated gas exchange in turbulent multiphase flow</a>
           <p class="p-au">Di Giorgio S., Zonta F., Pirozzoli S., Iafrati A., Soldati A.</p>
           <p class="p-ve">Physical Review Fluids, 10(11), 110506</p>
         </div>
@@ -331,7 +336,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2025</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Efficient+implementation+of+the+Allen%E2%80%93Cahn+phase-field+method+for+material+interface+tracking" target="_blank" rel="noopener">Efficient implementation of the Allen–Cahn phase-field method for material interface tracking</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.compfluid.2025.106768" target="_blank" rel="noopener">Efficient implementation of the Allen–Cahn phase-field method for material interface tracking</a>
           <p class="p-au">Pirozzoli S., Di Giorgio S., Rossi D.</p>
           <p class="p-ve">Computers &amp; Fluids, 106768</p>
         </div>
@@ -341,7 +346,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2025</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Comparative+analysis+of+volume+of+fluid+and+phase-field+methods+for+numerical+simulations+of+two-phase+flows" target="_blank" rel="noopener">Comparative analysis of volume of fluid and phase-field methods for numerical simulations of two-phase flows</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.ijmultiphaseflow.2025.105245" target="_blank" rel="noopener">Comparative analysis of volume of fluid and phase-field methods for numerical simulations of two-phase flows</a>
           <p class="p-au">Rossi D., Di Giorgio S., Pirozzoli S.</p>
           <p class="p-ve">International Journal of Multiphase Flow, 189</p>
         </div>
@@ -349,7 +354,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2024</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Evaluation+of+advection+schemes+and+surface+tension+model+for+algebraic+and+geometric+VOF+multiphase+flow+solvers" target="_blank" rel="noopener">Evaluation of advection schemes and surface tension model for algebraic and geometric VOF multiphase flow solvers</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.jcp.2023.112717" target="_blank" rel="noopener">Evaluation of advection schemes and surface tension model for algebraic and geometric VOF multiphase flow solvers</a>
           <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
           <p class="p-ve">Journal of Computational Physics, 499, 112717</p>
         </div>
@@ -357,7 +362,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2023</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=Navier%E2%80%93Stokes+simulations+of+vertical+sloshing+with+time-periodic+excitation" target="_blank" rel="noopener">Navier–Stokes simulations of vertical sloshing with time-periodic excitation</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.ijmultiphaseflow.2023.104505" target="_blank" rel="noopener">Navier–Stokes simulations of vertical sloshing with time-periodic excitation</a>
           <p class="p-au">Rossi D., Ubaldini D., Di Giorgio S., Pirozzoli S.</p>
           <p class="p-ve">International Journal of Multiphase Flow, 167, 104505</p>
         </div>
@@ -365,7 +370,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2022</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=On+coherent+vortical+structures+in+wave+breaking" target="_blank" rel="noopener">On coherent vortical structures in wave breaking</a>
+          <a class="p-ti" href="https://doi.org/10.1017/jfm.2022.674" target="_blank" rel="noopener">On coherent vortical structures in wave breaking</a>
           <p class="p-au">Di Giorgio S., Pirozzoli S., Iafrati A.</p>
           <p class="p-ve">Journal of Fluid Mechanics, 947, A44 <span class="badge">Cover Article</span></p>
         </div>
@@ -373,7 +378,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2020</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=On+the+relationship+between+drag+and+vertical+velocity+fluctuations+in+flow+over+riblets+and+liquid+infused+surfaces" target="_blank" rel="noopener">On the relationship between drag and vertical velocity fluctuations in flow over riblets and liquid infused surfaces</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.ijheatfluidflow.2020.108663" target="_blank" rel="noopener">On the relationship between drag and vertical velocity fluctuations in flow over riblets and liquid infused surfaces</a>
           <p class="p-au">Di Giorgio S., Pirozzoli S., Leonardi S., Orlandi P.</p>
           <p class="p-ve">International Journal of Heat and Fluid Flow, 86, 108663</p>
         </div>
@@ -381,7 +386,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2019</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=On+algebraic+TVD-VOF+methods+for+tracking+material+interfaces" target="_blank" rel="noopener">On algebraic TVD-VOF methods for tracking material interfaces</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.compfluid.2019.05.013" target="_blank" rel="noopener">On algebraic TVD-VOF methods for tracking material interfaces</a>
           <p class="p-au">Pirozzoli S., Di Giorgio S., Iafrati A.</p>
           <p class="p-ve">Computers &amp; Fluids, 189, 73–81</p>
         </div>
@@ -389,7 +394,7 @@ footer{border-top:1px solid var(--brd);padding:1.75rem 2rem;text-align:center;fo
       <div class="pub">
         <div class="p-yr">2019</div>
         <div>
-          <a class="p-ti" href="https://scholar.google.com/scholar?q=An+aerothermodynamic+design+optimization+framework+for+hypersonic+vehicles" target="_blank" rel="noopener">An aerothermodynamic design optimization framework for hypersonic vehicles</a>
+          <a class="p-ti" href="https://doi.org/10.1016/j.ast.2018.09.042" target="_blank" rel="noopener">An aerothermodynamic design optimization framework for hypersonic vehicles</a>
           <p class="p-au">Di Giorgio S., Quagliarella D., Pezzella G., Pirozzoli S.</p>
           <p class="p-ve">Aerospace Science and Technology, 84, 339–347</p>
         </div>
